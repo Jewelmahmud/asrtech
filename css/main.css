@@ -23,6 +23,29 @@ html {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     outline: 0;
+    font-family: "Lato", sans-serif;
+}
+button {
+    background: transparent;
+    cursor: pointer;
+}
+img {
+    display: block;
+    max-width: 100%;
+}
+html {
+    font-size: 62.5%;
+    font-family: "Lato", sans-serif;
+    overflow-x: hidden;
+}
+body {
+    font-size: 1.6rem;
+    min-height: 100vh;
+}
+input,button,textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 :root {
     --blue: #1e90ff;
@@ -230,10 +253,10 @@ body {
     -ms-flex-align: center;
     align-items: center;
 }
-.top-cnt .container .contact .item .icon {
+.top-cnt .container .contacts .item .icon {
     margin-right: 1.2rem;
 }
-.top-cnt .container .contact .item .text {
+.top-cnt .container .contacts .item .text {
     font-size: 1rem;
     line-height: 1.4rem;
     color: #5f5c6b;
@@ -851,18 +874,27 @@ transition: color 0.4s ease;
 
 /* Contact Page */
 .contact-hero {
-    background-image: -o-linear-gradient(352.06deg, #0f1257 -116.11%, #461bff 130.28%);
-    background-image: linear-gradient(97.94deg, #0f1257 -116.11%, #461bff 130.28%);
-    background-image: url("./../images/img-bg-about1.svg"), url("./../images/img-bg-about2.svg"),
-      -o-linear-gradient(352.06deg, #0f1257 -116.11%, #461bff 130.28%);
-    background-image: url("./../images/img-bg-about1.svg"), url("./../images/img-bg-about2.svg"),
-      linear-gradient(97.94deg, #0f1257 -116.11%, #461bff 130.28%);
+    background-image: url("./../images/img-bg-about1.svg"), url("./../images/img-bg-about2.svg"), linear-gradient(315deg, #feae96 0%, #fe0944 74%);
     background-repeat: no-repeat;
     background-position: left bottom, right bottom;
-    padding: 3.2rem 0;
+    padding: 3.2rem 0px;
 }
 .contact {
-    min-height: 103rem;
+    min-height: 72rem;
+    position: relative;
+}
+.contact-overlay {
+    z-index: -2;
+}
+.contact-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom:0;
+    background-color: #fe7bb0;
+    background-image: linear-gradient(315deg, #fe7bb0 0%, #ff748b 74%);
+    z-index: -1;
 }
 .contact .container {
     display: -webkit-box;
@@ -904,7 +936,7 @@ transition: color 0.4s ease;
     font-family: Poppins;
     font-style: normal;
     font-weight: 600;
-    font-size: 4.4rem;
+    font-size: 3.5rem;
     line-height: 130%;
     color: #fff;
     max-width: 577px;
@@ -913,15 +945,19 @@ transition: color 0.4s ease;
     word-break: break-word;
 }
 .contact .container .icon.about2 {
-    -webkit-animation: img1 3s ease-in-out infinite;
-    animation: img1 3s ease-in-out infinite;
+    animation: 3s ease-in-out 0s infinite normal none running img1;
     right: 0px;
-    bottom: 0px;
+    bottom: 40px;
+    position: absolute;
+    display: block;
+    z-index: 10;
+    width: 100px;
 }
 
 .cntform {
-    margin-top: -61rem;
+    margin-top: -40rem;
     padding-bottom: 12.3rem;
+    position: relative;
 }
 .cntform .container {
     -webkit-box-align: start;
@@ -1014,6 +1050,34 @@ transition: color 0.4s ease;
 .cntform .container .cnt-form .form-group .send-form:hover {
     background: #11a570;
 }
+.cntform .container .cnt-form .form-group .subdiv {
+    position: relative;
+    min-height: 55px;
+}
+.cntform .container .cnt-form .form-group .subdiv .loadbtn {
+    width: 100px;
+    position: absolute;
+    left: 38%;
+    top: 25px;
+    transform: translate(-25%,-50%);
+    display: none;
+}
+
+.cntform .container .cnt-form .time {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 3.9rem;
+}
+.cntform .container .cnt-form .time .icon {
+    margin-right: 1.6rem;
+}
 .contact-info {
     padding-bottom: 18.9rem;
 }
@@ -1050,7 +1114,7 @@ transition: color 0.4s ease;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    grid-gap: 3.2rem;
+    grid-gap: 1.2rem;
 }
 .contact-info .container .bot .item {
     max-width: 270px;
