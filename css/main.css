@@ -141,7 +141,7 @@ body {
     position: relative;
     overflow: hidden;
     z-index: 1;
-    border: 2px solid var(--white);
+    border: 2px solid #ffff;
 }
 .btn::after {
     content: "";
@@ -161,14 +161,14 @@ body {
     left: 0;
     width: 0%;
     height: 100%;
-    background: var(--gradient);
+    background: #16d38f;
     transition: all 0.3s;
     border-radius: 10rem;
     z-index: -1;
 }
 .btn:hover {
     color: #fff;
-    border: 2px solid var(--red);
+    border: 2px solid #16d38f;
 }
 .btn:hover:before {
     width: 100%;
@@ -338,12 +338,13 @@ body {
     list-style: none;
     float: left;
 }
-.header .container .H-right .menu ul li a{
+.header .container .H-right .menu ul li a {
     padding: 10px;
     text-transform: uppercase;
-    
+    font-weight: 600;
 }
-.header .container .H-right .menu ul li a:hover{color: var(--red);}
+.header .container .H-right .menu ul li a:hover{color: rgb(70, 27, 255);}
+.header .container .H-right .menu ul li a.active{color: rgb(70, 27, 255);}
 
 
 /* MENU STYLES */
@@ -399,100 +400,100 @@ cursor: pointer;
 
 .mobileMenu .ham > div::before,
 .mobileMenu .ham > div::after {
-background: var(--black);
-transition: 1s ease;
+    background: var(--black);
+    transition: 1s ease;
 }
 
 /* Moves Line Down */
 .mobileMenu .hamburger > div::after {
-top: 10px;
+    top: 10px;
 }
 
 /* Toggler Animation */
 .mobileMenu .toggler:checked + .hamburger > div {
-transform: rotate(135deg);
+    transform: rotate(135deg);
 }
 
 /* Turns Lines Into X */
 .mobileMenu .toggler:checked + .hamburger > div:before,
 .mobileMenu .toggler:checked + .hamburger > div:after {
-top: 0;
-transform: rotate(90deg);
+    top: 0;
+    transform: rotate(90deg);
 }
 
 /* Rotate On Hover When Checked */
 .mobileMenu .toggler:checked:hover + .hamburger > div {
-transform: rotate(225deg);
+    transform: rotate(225deg);
 }
 
 /* Show Menu */
 .mobileMenu .toggler:checked ~ .mobileNav {
-visibility: visible;
+    visibility: visible;
 }
 
 .mobileMenu .toggler:checked ~ .mobileNav > div {
-transform: scale(1);
-transition-duration: var(--menu-speed);
+    transform: scale(1);
+    transition-duration: var(--menu-speed);
 }
 
 .mobileMenu .toggler:checked ~ .mobileNav > div > div {
-opacity: 1;
-transition:  opacity 0.4s ease 0.4s;
+    opacity: 1;
+    transition:  opacity 0.4s ease 0.4s;
 }
 
 .mobileMenu .mobileNav {
-position: fixed;
-top: 70;
-left: 0;
-width: 100%;
-height: 100%;
-visibility: hidden;
-overflow: hidden;
-display: flex;
-align-items: center;
-justify-content: center;
+    position: fixed;
+    top: 70;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .mobileMenu .mobileNav > div {
-background: var(--gradient);
-width: 200vw;
-height: 200vw;
-border-radius: 50% !important;
-display: flex;
-border-radius: 50px;
-flex: none;
-align-items: center;
-justify-content: center;
-transform: scale(0);
-transition: all 0.4s ease;
+    background: var(--gradient);
+    width: 200vw;
+    height: 200vw;
+    border-radius: 50% !important;
+    display: flex;
+    border-radius: 50px;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    transition: all 0.4s ease;
 }
 .mobileMenu .mobileNav > div {
-border-radius: 50% !important;
--webkit-transition:  border-radius 0.4s;
-transition: border-radius 0,4s;
-transition: all 0.4s ease;
+    border-radius: 50% !important;
+    -webkit-transition:  border-radius 0.4s;
+    transition: border-radius 0,4s;
+    transition: all 0.4s ease;
 }
 
 .mobileMenu .mobileNav > div > div {
-text-align: center;
-max-width: 90vw;
-max-height: 100vh;
-opacity: 0;
-transition: opacity 0.4s ease;
+    text-align: center;
+    max-width: 90vw;
+    max-height: 100vh;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .mobileMenu .mobileNav > div > div > ul > li {
-list-style: none;
-color: #fff;
-font-size: 1.5rem;
-padding: 1rem;
-float: none !important;
+    list-style: none;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 1rem;
+    float: none !important;
 }
 
 .mobileMenu .mobileNav > div > div > ul > li > a {
-color: inherit;
-text-decoration: none;
-transition: color 0.4s ease;
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.4s ease;
 }
 
 
@@ -583,6 +584,16 @@ transition: color 0.4s ease;
     left: 0;
     right: 0;
     z-index: 1;
+}
+.page-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background: rgb(10,0,124);
+    background: linear-gradient(90deg, rgb(209 0 58 / 60%) 0%, rgba(34,1,1,0.3561799719887955) 100%);
 }
 .hero .container {
     position: relative;
@@ -821,6 +832,8 @@ transition: color 0.4s ease;
     left: 50%;
     -ms-transform: translate(-50%, -50%) !important;
     transform: translate(-50%, -50%) !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 
@@ -840,11 +853,9 @@ transition: color 0.4s ease;
 }
 .contact-bg-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom:0;
+    inset: 0px;
     z-index: 1;
+    background: linear-gradient(90deg, rgb(177 0 0 / 22%) 0%, rgba(34, 1, 1, 0.357) 100%);
 }
 .contact .container {
     display: -webkit-box;
