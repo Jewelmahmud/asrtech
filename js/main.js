@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-  new WOW().init();
+  AOS.init();
 
   $('[data-vbg]').youtube_background({
     'mobile': true
@@ -62,28 +62,13 @@ $(document).ready(function(){
   });
 
 
-  var searchbox = $('.search-input'),
-      checker = true;
+  var searchInput = $('.search form input');
 
-  searchbox.on('mouseover', function(){
-    $(this).parent('.search-box').addClass('bgnull');
+  searchInput.focus(function(){
+    $('.search').addClass('focus');
+  }).blur(function(){
+    $('.search').removeClass('focus');
   });
-
-  searchbox.click(function(){
-    $(this).on('blur', function(){
-      $(this).parent('.search-box').removeClass('bgnull');
-    });
-    checker = false;
-    console.log('hello');
-  });
- console.log(checker);
-  // if(checker == true){
-  //   searchbox.on('mouseleave',function(){
-  //         $(this).parent('.search-box').removeClass('bgnull');
-  //   });
-  // }
-
-
   
 
 });
